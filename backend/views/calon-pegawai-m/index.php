@@ -2,20 +2,22 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\widgets\ActiveRecord;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\search\CalonPegawaiMSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Calon Pegawai Ms';
+$this->title = 'Calon Pegawai';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="calon-pegawai-m-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <hr style = "border:1px solid;"/>
 
     <p>
-        <?= Html::a('Create Calon Pegawai M', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Calon Pegawai', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -25,28 +27,27 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'calon_pegawai_id',
-            'pegawai_id',
-            'posisi_pekerjaan',
+            'foto',
+            // 'pegawai_id',
             'nama_lengkap',
-            'nik',
+            'posisi_pekerjaan',
+            // 'nik',
             //'tempat_lahir',
             //'tanggal_lahir',
             //'alamat:ntext',
             //'no_telepon',
             //'email:email',
-            //'jenis_kelamin',
+            'jenis_kelamin',
             //'agama',
             //'golongan_darah',
             //'kewarganegaraan',
-            //'pendidikan',
+            'pendidikan',
             //'skill_dan_minat',
             //'pengalaman_kerja',
             //'organisasi',
             //'prestasi',
             //'lampiran',
-            //'foto',
             //'created_at',
             //'created_by',
             //'updated_at',

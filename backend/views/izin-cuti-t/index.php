@@ -13,7 +13,6 @@ $this->title = 'Surat Izin Cuti';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="izin-cuti-t-index">
-    <h3><strong>Daftar Izin Cuti</strong></h3>
     <hr style = "border:1px solid;"/>
 
     <p>

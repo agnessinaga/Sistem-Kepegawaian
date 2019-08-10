@@ -1,6 +1,5 @@
 <?php
 use yii\helpers\Html;
-use common\models\User;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -240,7 +239,7 @@ use common\models\User;
                                  alt="User Image"/>
 
                             <p>
-                                <?= Yii::$app->user->identity->username?>
+                                <?= Yii::$app->user->identity->username?> - Web Developer
                                 <small>Member since Nov. 2012</small>
                             </p>
                         </li>

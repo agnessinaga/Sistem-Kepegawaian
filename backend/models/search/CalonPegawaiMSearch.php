@@ -18,7 +18,7 @@ class CalonPegawaiMSearch extends CalonPegawaiM
     {
         return [
             [['calon_pegawai_id', 'pegawai_id', 'nik', 'no_telepon'], 'integer'],
-            [['posisi_pekerjaan', 'nama_lengkap', 'tempat_lahir', 'tanggal_lahir', 'alamat', 'email', 'jenis_kelamin', 'agama', 'golongan_darah', 'kewarganegaraan', 'pendidikan', 'skill_dan_minat', 'pengalaman_kerja', 'organisasi', 'prestasi', 'lampiran', 'foto', 'created_at', 'created_by', 'updated_at', 'updated_by', 'host_name'], 'safe'],
+            [['posisi_pekerjaan', 'nama_lengkap', 'tempat_lahir', 'tanggal_lahir', 'alamat', 'email', 'jenis_kelamin', 'golongan_darah', 'kewarganegaraan', 'pendidikan', 'skill_dan_minat', 'pengalaman_kerja', 'organisasi', 'prestasi', 'lampiran', 'foto', 'created_at', 'created_by', 'updated_at', 'updated_by', 'host_name'], 'safe'],
         ];
     }
 
@@ -73,7 +73,6 @@ class CalonPegawaiMSearch extends CalonPegawaiM
             ->andFilterWhere(['ilike', 'alamat', $this->alamat])
             ->andFilterWhere(['ilike', 'email', $this->email])
             ->andFilterWhere(['ilike', 'jenis_kelamin', $this->jenis_kelamin])
-            ->andFilterWhere(['ilike', 'agama', $this->agama])
             ->andFilterWhere(['ilike', 'golongan_darah', $this->golongan_darah])
             ->andFilterWhere(['ilike', 'kewarganegaraan', $this->kewarganegaraan])
             ->andFilterWhere(['ilike', 'pendidikan', $this->pendidikan])

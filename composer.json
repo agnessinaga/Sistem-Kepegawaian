@@ -24,7 +24,8 @@
         "onmotion/yii2-survey": "*",
         "philippfrenzel/yii2fullcalendar": "*",
         "kartik-v/yii2-widget-timepicker": "*",
-        "2amigos/yii2-date-time-picker-widget": "~1.0"
+        "2amigos/yii2-date-time-picker-widget": "~1.0",
+        "wbraganca/yii2-dynamicform": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

@@ -5,14 +5,14 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\CalonPegawaiM */
 
-$this->title = 'Update Calon Pegawai M: ' . $model->calon_pegawai_id;
+$this->title = 'Ubah';
 $this->params['breadcrumbs'][] = ['label' => 'Calon Pegawai Ms', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->calon_pegawai_id, 'url' => ['view', 'id' => $model->calon_pegawai_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="calon-pegawai-m-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+	<hr style = "border:1px solid;"/>
 
     <?= $this->render('_form', [
         'model' => $model,

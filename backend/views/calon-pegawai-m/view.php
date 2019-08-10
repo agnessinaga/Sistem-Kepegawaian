@@ -6,18 +6,18 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\CalonPegawaiM */
 
-$this->title = $model->calon_pegawai_id;
-$this->params['breadcrumbs'][] = ['label' => 'Calon Pegawai Ms', 'url' => ['index']];
+$this->title = $model->nama_lengkap;
+$this->params['breadcrumbs'][] = ['label' => 'Calon Pegawai', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="calon-pegawai-m-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <hr style = "border:1px solid;"/>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->calon_pegawai_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->calon_pegawai_id], [
+        <?= Html::a('Ubah', ['update', 'id' => $model->calon_pegawai_id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Hapus', ['delete', 'id' => $model->calon_pegawai_id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'calon_pegawai_id',
-            'pegawai_id',
+            // 'pegawai_id',
             'posisi_pekerjaan',
             'nama_lengkap',
             'nik',

@@ -46,6 +46,9 @@ class CalonPegawaiM extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public $cv;
+    public $image;
+
     public static function tableName()
     {
         return 'calon_pegawai_m';
@@ -59,16 +62,18 @@ class CalonPegawaiM extends \yii\db\ActiveRecord
         return [
             [['pegawai_id', 'nik', 'no_telepon'], 'default', 'value' => null],
             [['pegawai_id', 'nik', 'no_telepon'], 'integer'],
-            [['posisi_pekerjaan', 'nama_lengkap', 'nik', 'tempat_lahir', 'tanggal_lahir', 'alamat', 'no_telepon', 'email', 'jenis_kelamin', 'agama', 'golongan_darah', 'kewarganegaraan', 'pendidikan', 'skill_dan_minat', 'foto'], 'required'],
+            [['posisi_pekerjaan', 'nama_lengkap', 'nik', 'tempat_lahir', 'tanggal_lahir', 'alamat', 'no_telepon', 'email', 'jenis_kelamin', 'golongan_darah', 'kewarganegaraan', 'pendidikan', 'skill_dan_minat', 'agama'], 'required'],
             [['tanggal_lahir', 'created_at', 'updated_at'], 'safe'],
             [['alamat'], 'string'],
-            [['posisi_pekerjaan', 'jenis_kelamin', 'agama', 'kewarganegaraan'], 'string', 'max' => 16],
-            [['nama_lengkap', 'tempat_lahir', 'pendidikan', 'created_by', 'updated_by', 'host_name'], 'string', 'max' => 64],
+            [['posisi_pekerjaan', 'jenis_kelamin', 'kewarganegaraan'], 'string', 'max' => 16],
+            [['nama_lengkap', 'tempat_lahir', 'pendidikan', 'created_by', 'updated_by', 'host_name', 'foto', 'agama'], 'string', 'max' => 64],
             [['email'], 'string', 'max' => 128],
             [['golongan_darah'], 'string', 'max' => 2],
             [['skill_dan_minat', 'pengalaman_kerja', 'organisasi', 'prestasi', 'lampiran'], 'string', 'max' => 256],
-            [['foto'], 'string', 'max' => 254],
             [['pegawai_id'], 'exist', 'skipOnError' => true, 'targetClass' => PegawaiM::className(), 'targetAttribute' => ['pegawai_id' => 'pegawai_id']],
+            [['cv', 'image'], 'safe'],
+            [['cv'], 'file', 'extensions' => 'doc, docx, pdf'],
+            [['image'], 'file', 'extensions' => 'jpg, jpeg, png'],
         ];
     }
 
@@ -78,11 +83,11 @@ class CalonPegawaiM extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'calon_pegawai_id' => 'Calon Pegawai ID',
-            'pegawai_id' => 'Pegawai ID',
+            'calon_pegawai_id' => 'ID Calon Pegawai',
+            // 'pegawai_id' => 'ID Pegawai',
             'posisi_pekerjaan' => 'Posisi Pekerjaan',
             'nama_lengkap' => 'Nama Lengkap',
-            'nik' => 'Nik',
+            'nik' => 'NIK',
             'tempat_lahir' => 'Tempat Lahir',
             'tanggal_lahir' => 'Tanggal Lahir',
             'alamat' => 'Alamat',
@@ -97,8 +102,8 @@ class CalonPegawaiM extends \yii\db\ActiveRecord
             'pengalaman_kerja' => 'Pengalaman Kerja',
             'organisasi' => 'Organisasi',
             'prestasi' => 'Prestasi',
-            'lampiran' => 'Lampiran',
-            'foto' => 'Foto',
+            'cv' => 'Lampiran',
+            'image' => 'Foto',
             'created_at' => 'Created At',
             'created_by' => 'Created By',
             'updated_at' => 'Updated At',
@@ -114,7 +119,7 @@ class CalonPegawaiM extends \yii\db\ActiveRecord
     {
         return $this->hasOne(PegawaiM::className(), ['pegawai_id' => 'pegawai_id']);
     }
-
+ 
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -154,4 +159,5 @@ class CalonPegawaiM extends \yii\db\ActiveRecord
     {
         return $this->hasMany(PrestasiM::className(), ['calon_pegawai_id' => 'calon_pegawai_id']);
     }
+
 }
